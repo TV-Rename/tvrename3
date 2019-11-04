@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9232CC3-D867-416E-93E7-8365D4BC7D49}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TVRename</RootNamespace>
+    <AssemblyName>TVRename</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaFS, Version=2.2.0.0, Culture=neutral, PublicKeyToken=4d31a58f7d7ad5c9, processorArchitecture=MSIL">
+      <HintPath>..\packages\AlphaFS.2.2.6\lib\net452\AlphaFS.dll</HintPath>
+    </Reference>
+    <Reference Include="Ical.Net, Version=4.1.8.0, Culture=neutral, PublicKeyToken=65c0446cd019ea53, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ical.Net.4.1.11\lib\net46\Ical.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2019.1.3.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.2019.1.3\lib\net20\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="MediaInfo.Wrapper, Version=19.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MediaInfo.Wrapper.19.4.0\lib\net45\MediaInfo.Wrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.6.6\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Targets.Syslog, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a15d6ba50060b73f, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Targets.Syslog.6.0.0\lib\net452\NLog.Targets.Syslog.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.Windows.Forms.4.3.0\lib\net35\NLog.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="NodaTime, Version=2.4.6.0, Culture=neutral, PublicKeyToken=4226afe0d9b296d1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NodaTime.2.4.6\lib\net45\NodaTime.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="View\Supporting\Filters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Supporting\TVRenameSplash.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BrowserBehavior.cs" />
+    <Compile Include="ViewModel\Commands\CustomCommands.cs" />
+    <Compile Include="ViewModel\ShowFilterViewModel.cs" />
+    <Compile Include="ViewModel\SplashViewModel.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
+    <Compile Include="ViewModel\MyShowsViewModel.cs" />
+    <Compile Include="ViewModel\ValueConverter\HTMLDetailsConverter.cs" />
+    <Compile Include="ViewModel\ValueConverter\HTMLImageDetailsConverter.cs" />
+    <Compile Include="ViewModel\ValueConverter\ShowNameConverter.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WhenToWatchViewModel.cs" />
+    <Compile Include="View\Supporting\Filters.xaml.cs">
+      <DependentUpon>Filters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WebBrowserUtility.cs" />
+    <Compile Include="View\Supporting\TVRenameSplash.xaml.cs">
+      <DependentUpon>TVRenameSplash.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iconfinder_calendar-clock_299096.png" />
+    <Resource Include="Images\iconfinder_cog_299078.png" />
+    <Resource Include="Images\iconfinder_flask_299052.png" />
+    <Resource Include="Images\iconfinder_movie-alt_285640.png" />
+    <Resource Include="Images\iconfinder_search_285651.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\iconfinder_53_Cloud_Reload_183466.png" />
+    <Resource Include="Images\iconfinder_icon-111-search_314384.png" />
+    <Resource Include="Images\iconfinder_icon-136-document-edit_314251.png" />
+    <Resource Include="Images\iconfinder_icon-27-trash-can_314282.png" />
+    <Resource Include="Images\iconfinder_icon-74-document-search_314438.png" />
+    <Resource Include="Images\iconfinder_icon-81-document-add_314445.png" />
+    <Resource Include="Images\iconfinder_icon-86-document-list_314450.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black-Red_256x25611.png" />
+    <None Include="Resources\ZoomHS1.png" />
+    <None Include="Resources\Web1.png" />
+    <None Include="Resources\tv3white1.png" />
+    <None Include="Resources\TableHS1.png" />
+    <None Include="Resources\SearchWebHS1.png" />
+    <None Include="Resources\SearchFolderHS1.png" />
+    <None Include="Resources\saveHS1.png" />
+    <None Include="Resources\RefreshDocViewHS1.png" />
+    <None Include="Resources\iconfinder_Info_Circle_Symbol_Information_Letter_13968231.ico" />
+    <None Include="Resources\Help1.png" />
+    <None Include="Resources\graphhs1.png" />
+    <None Include="Resources\GetLatestVersion1.png" />
+    <None Include="Resources\FormulaEvaluatorHS1.png" />
+    <None Include="Resources\FindHS1.png" />
+    <None Include="Resources\EditInformationHS1.png" />
+    <None Include="Resources\ButtonSmall_Delete1.png" />
+    <None Include="Resources\Black-Red_256x2561.png" />
+    <Resource Include="app.ico" />
+    <Content Include="App\app.ico" />
+    <None Include="Resources\tv3white.png" />
+    <None Include="Resources\ButtonSmall_Delete.png" />
+    <None Include="Resources\Black-Red_256x256.png" />
+    <None Include="Resources\EditInformationHS.png" />
+    <None Include="Resources\SearchWebHS.png" />
+    <None Include="Resources\SearchFolderHS.png" />
+    <None Include="Resources\ZoomHS.png" />
+    <None Include="Resources\TableHS.png" />
+    <None Include="Resources\FormulaEvaluatorHS.png" />
+    <None Include="Resources\FindHS.png" />
+    <None Include="Resources\Web.png" />
+    <None Include="Resources\RefreshDocViewHS.png" />
+    <None Include="Resources\Help.png" />
+    <None Include="Resources\graphhs.png" />
+    <None Include="Resources\GetLatestVersion.png" />
+    <None Include="Resources\saveHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\CommandLineArgs.cs" />
+    <Compile Include="App\AutoFolderMonitor.cs" />
+    <Compile Include="DownloadIdentifers\DownloadWdtvMetaData.cs" />
+    <Compile Include="DownloadIdentifers\IncorrectFileDates.cs" />
+    <Compile Include="Exporter\ActionListExporter.cs" />
+    <Compile Include="Exporter\ActionListXML.cs" />
+    <Compile Include="Exporter\CopyMoveXml.cs" />
+    <Compile Include="Exporter\MissingCSV.cs" />
+    <Compile Include="Exporter\RecentASXExporter.cs" />
+    <Compile Include="Exporter\RecentExporter.cs" />
+    <Compile Include="Exporter\RecentM3UExporter.cs" />
+    <Compile Include="Exporter\RecentWPLExporter.cs" />
+    <Compile Include="Exporter\RecentXSPFExporter.cs" />
+    <Compile Include="Exporter\RenamingXml.cs" />
+    <Compile Include="Exporter\ShowsExporter.cs" />
+    <Compile Include="Exporter\ShowsHTML.cs" />
+    <Compile Include="Exporter\UpcomingExporter.cs" />
+    <Compile Include="Exporter\UpcomingiCAL.cs" />
+    <Compile Include="Finders\DownloadFinder.cs" />
+    <Compile Include="Finders\FinderHelper.cs" />
+    <Compile Include="Finders\LibraryFolderFileFinder.cs" />
+    <Compile Include="Finders\qBitTorrentFinder.cs" />
+    <Compile Include="Finders\JSONWebpageFinder.cs" />
+    <Compile Include="Finders\RSSItem.cs" />
+    <Compile Include="Finders\RSSItemList.cs" />
+    <Compile Include="Finders\SearchFolderFileFinder.cs" />
+    <Compile Include="Finders\DownloadingFinder.cs" />
+    <Compile Include="Ipc\IRemoteActions.cs" />
+    <Compile Include="Ipc\RemoteClient.cs" />
+    <Compile Include="DownloadIdentifers\DownloadEpisodeJPG.cs" />
+    <Compile Include="DownloadIdentifers\DownloadIdentifiersController.cs" />
+    <Compile Include="DownloadIdentifers\DownloadpyTivoMetaData.cs" />
+    <Compile Include="DownloadIdentifers\DownloadMede8erMetaData.cs" />
+    <Compile Include="DownloadIdentifers\DownloadSeriesJPG.cs" />
+    <Compile Include="DownloadIdentifers\DownloadXBMCMetaData.cs" />
+    <Compile Include="DownloadIdentifers\DownloadFanartJPG.cs" />
+    <Compile Include="DownloadIdentifers\DownloadIdentifier.cs" />
+    <Compile Include="DownloadIdentifers\DownloadJolderJPG.cs" />
+    <Compile Include="DownloadIdentifers\DownloadXBMCImages.cs" />
+    <Compile Include="Exporter\ShowsTXT.cs" />
+    <Compile Include="Exporter\Exporter.cs" />
+    <Compile Include="Exporter\MissingXML.cs" />
+    <Compile Include="Exporter\UpcomingRSS.cs" />
+    <Compile Include="Exporter\UpcomingXML.cs" />
+    <Compile Include="Finders\FileFinder.cs" />
+    <Compile Include="Finders\RSSFinder.cs" />
+    <Compile Include="Finders\uTorrentFinder.cs" />
+    <Compile Include="Finders\SABnzbdFinder.cs" />
+    <Compile Include="Finders\Finder.cs" />
+    <Compile Include="ItemsAndActions\Action.cs" />
+    <Compile Include="ItemsAndActions\ActionDelete.cs" />
+    <Compile Include="ItemsAndActions\ActionDeleteDirectory.cs" />
+    <Compile Include="ItemsAndActions\ActionDeleteFile.cs" />
+    <Compile Include="ItemsAndActions\ActionDownload.cs" />
+    <Compile Include="ItemsAndActions\ActionFileMetaData.cs" />
+    <Compile Include="ItemsAndActions\ActionFileOperation.cs" />
+    <Compile Include="ItemsAndActions\ActionMede8erViewXML.cs" />
+    <Compile Include="ItemsAndActions\ActionMede8erXML.cs" />
+    <Compile Include="ItemsAndActions\ActionDateTouch.cs" />
+    <Compile Include="ItemsAndActions\ActionQueue.cs" />
+    <Compile Include="ItemsAndActions\ActionTDownload.cs" />
+    <Compile Include="ItemsAndActions\ActionWdtvMeta.cs" />
+    <Compile Include="ItemsAndActions\ActionWriteMetadata.cs" />
+    <Compile Include="ItemsAndActions\ItemList.cs" />
+    <Compile Include="ScanActivity\CheckAllFoldersExist.cs" />
+    <Compile Include="ScanActivity\CheckShows.cs" />
+    <Compile Include="ScanActivity\FindMissingEpisodes.cs" />
+    <Compile Include="ScanActivity\FindMissingEpisodesDownloading.cs" />
+    <Compile Include="ScanActivity\FindMissingEpisodesLocally.cs" />
+    <Compile Include="ScanActivity\FindMissingEpisodesSearch.cs" />
+    <Compile Include="ScanActivity\FindNewShowsInDownloadFolders.cs" />
+    <Compile Include="ScanActivity\FindNewShowsInLibrary.cs" />
+    <Compile Include="ScanActivity\MergeLibraryEpisodes.cs" />
+    <Compile Include="ScanActivity\RenameAndMissingCheck.cs" />
+    <Compile Include="ScanActivity\ScanShowActivity.cs" />
+    <Compile Include="ScanActivity\ScanActivity.cs" />
+    <Compile Include="Settings\CustomSeasonName.cs" />
+    <Compile Include="Settings\Language.cs" />
+    <Compile Include="Settings\Languages.cs" />
+    <Compile Include="Settings\PreviouslySeenEpisodes.cs" />
+    <Compile Include="Settings\ProcessedEpisode.cs" />
+    <Compile Include="Settings\SeasonFilter.cs" />
+    <Compile Include="Settings\ShowFilter.cs" />
+    <Compile Include="Settings\ShowItem.cs" />
+    <Compile Include="Model\TheTVDB\Actor.cs" />
+    <Compile Include="Model\TheTVDB\SeriesBanners.cs" />
+    <Compile Include="Model\TheTVDB\SeriesSpecifier.cs" />
+    <Compile Include="Model\TheTVDB\ShowNotFoundException.cs" />
+    <Compile Include="Model\TheTVDB\TVDBSeriesDownloadException.cs" />
+    <Compile Include="Model\TheTVDB\TVSource.cs" />
+    <Compile Include="Model\TheTVDB\TvDbTokenProvider.cs" />
+    <Compile Include="TVRename\ActionEngine.cs" />
+    <Compile Include="TVRename\BullkAddManager.cs" />
+    <Compile Include="TVRename\CacheUpdater.cs" />
+    <Compile Include="TVRename\Beta.cs" />
+    <Compile Include="ScanActivity\CleanDownloadDirectory.cs" />
+    <Compile Include="TVRename\FolderMonitorEntryList.cs" />
+    <Compile Include="TVRename\ShowLibrary.cs" />
+    <Compile Include="TVRename\TVRenameOperationInteruptedException.cs" />
+    <Compile Include="Utility\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Utility\Helper\ShowHtmlHelper.cs" />
+    <Compile Include="Utility\Helper\FileHelper.cs" />
+    <Compile Include="Utility\FileSystemProperties.cs" />
+    <Compile Include="Utility\Helper\HTTPHelper.cs" />
+    <Compile Include="Utility\Helper\JSONHelper.cs" />
+    <Compile Include="Utility\NativeMethods.cs" />
+    <Compile Include="Utility\DownloadInformation.cs" />
+    <Compile Include="Utility\PossibleDuplicateEpisode.cs" />
+    <Compile Include="Utility\DirFilesCache.cs" />
+    <Compile Include="ItemsAndActions\ActionPyTivoMeta.cs" />
+    <Compile Include="Model\TheTVDB\Banner.cs" />
+    <Compile Include="Model\TheTVDB\Episode.cs" />
+    <Compile Include="Model\TheTVDB\ExtraEp.cs" />
+    <Compile Include="Model\TheTVDB\Season.cs" />
+    <Compile Include="Model\TheTVDB\SeriesInfo.cs" />
+    <Compile Include="ItemsAndActions\ActionCopyMoveRename.cs" />
+    <Compile Include="ItemsAndActions\ActionDownloadImage.cs" />
+    <Compile Include="ItemsAndActions\Item.cs" />
+    <Compile Include="ItemsAndActions\ItemMissing.cs" />
+    <Compile Include="ItemsAndActions\ActionNFO.cs" />
+    <Compile Include="ItemsAndActions\ActionItemSorter.cs" />
+    <Compile Include="ItemsAndActions\ItemDownloading.cs" />
+    <Compile Include="TVRename\FoundFolder.cs" />
+    <Compile Include="TVRename\IgnoreItem.cs" />
+    <Compile Include="TVRename\PathManager.cs" />
+    <Compile Include="Utility\BT.cs" />
+    <Compile Include="Settings\CustomEpisodeName.cs" />
+    <Compile Include="Utility\DirCache.cs" />
+    <Compile Include="Utility\DirCacheEntry.cs" />
+    <Compile Include="Utility\Helper\Helpers.cs" />
+    <Compile Include="Utility\SAB\QueueSlotsSlot.cs" />
+    <Compile Include="Utility\Helper\RegistryHelper.cs" />
+    <Compile Include="Utility\SetProgressDelegate.cs" />
+    <Compile Include="Utility\Helper\StringExtensions.cs" />
+    <Compile Include="Utility\Helper\TimeZoneHelper.cs" />
+    <Compile Include="Utility\UpdateVersion.cs" />
+    <Compile Include="Utility\VersionUpdater.cs" />
+    <Compile Include="Utility\Helper\XMLHelper.cs" />
+    <None Include="Resources\iconfinder_Info_Circle_Symbol_Information_Letter_1396823.ico" />
+    <None Include="app.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Settings\Searchers.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\ShowRule.cs" />
+    <Compile Include="Settings\Statistics.cs" />
+    <Compile Include="Model\TheTVDB\TheTVDB.cs" />
+    <Compile Include="TVRename\TVDoc.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1608702-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\ShowPreferences\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MediaInfo.Native.19.4.0\build\MediaInfo.Native.targets" Condition="Exists('..\packages\MediaInfo.Native.19.4.0\build\MediaInfo.Native.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MediaInfo.Native.19.4.0\build\MediaInfo.Native.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MediaInfo.Native.19.4.0\build\MediaInfo.Native.targets'))" />
+  </Target>
+</Project>

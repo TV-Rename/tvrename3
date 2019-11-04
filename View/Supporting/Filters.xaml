@@ -1,0 +1,54 @@
+﻿<Window x:Class="TVRename.View.Supporting.Filters"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVRename.View.Supporting"
+        xmlns:vm="clr-namespace:TVRename.ViewModel"
+        mc:Ignorable="d"
+        Title="Select Filters..." Width="350" Height="470">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <CheckBox  Name="chkHideIgnoredSeasons" IsChecked="{Binding HideIgnoredSeasons}" Height="17" Width="274" TabIndex="15" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" >Filter Out Ignored Seasons</CheckBox>
+        <Label  Height="22" Width="56" FontSize="11" FontFamily="Microsoft Sans Serif" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" >Network</Label>
+        <ComboBox Name="cmbNetwork" SelectedValue="{Binding SelectedNetwork}" ItemsSource="{Binding AvailableNetworks, Mode=OneWay}" Grid.Row="3" Height="21" Width="172" TabIndex="13" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <ComboBox Name="cmbRating" SelectedValue="{Binding SelectedShowRating}" ItemsSource="{Binding AvailableRatings, Mode=OneWay}" Height="21" Width="172" TabIndex="12" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <Label Height="22" Width="47" FontSize="11" FontFamily="Microsoft Sans Serif" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" >Rating</Label>
+        <Label Height="22" Width="46" FontSize="11" FontFamily="Microsoft Sans Serif" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" >Status</Label>
+        <Label Height="22" Width="44" FontSize="11" FontFamily="Microsoft Sans Serif" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" >Name</Label>
+        <Button Name="bnReset" Height="23" Width="75" TabIndex="8" Click="bnReset_Click" Grid.Row="6" Grid.Column="0"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" >Reset</Button>
+        <ComboBox Name="cmbShowStatus"  SelectedValue="{Binding SelectedShowStatus}" ItemsSource="{Binding AvailableShowStatii, Mode=OneWay}" Height="21" Width="172" TabIndex="4" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <TextBox Name="tbShowName" Text="{Binding SelectedShowName}" Height="20" Width="172" TabIndex="3" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" ></TextBox>
+        <ListBox Name="clbGenre"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding AvailableGenres, Mode=OneWay}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Vertical" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox IsChecked="{Binding IsSelected}" Content="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <WrapPanel Grid.Row="6" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,15,0,0">
+            <Button Name="btnOk" Height="23" Width="75" TabIndex="7" Click="btnOk_Click" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsDefault="True">OK</Button>
+            <Button Name="btnCancel" Height="23" Width="75" TabIndex="6" Click="btnCancel_Click" Margin="0,0,10,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" IsCancel="True">Cancel</Button>
+        </WrapPanel>
+
+    </Grid>
+</Window>

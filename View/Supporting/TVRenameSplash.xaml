@@ -1,0 +1,22 @@
+﻿<Window x:Class="TVRename.TvRenameSplash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TVRename"
+        xmlns:viewmodel="clr-namespace:TVRename.ViewModel"
+        mc:Ignorable="d"
+        Height="159" Width="384" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" MinWidth="384" MinHeight="159" ScrollViewer.VerticalScrollBarVisibility="Disabled" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Mark\source\repos\TVR2\TVR2\Resources\Black-Red_256x256.png"/>
+    </Window.Background>
+    <Grid>
+        <Image HorizontalAlignment="Left" Height="115" Margin="10,34,0,0" VerticalAlignment="Top" Width="90" Source="C:\Users\Mark\source\repos\TVR2\TVR2\Resources/tv3white.png"/>
+        <Label Content="{Binding Version}" Height="22" Width="264" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="5" Background="Transparent" Margin="0,0,12,97" HorizontalAlignment="Right" VerticalAlignment="Bottom" Foreground="White" />
+        <Label Content="{Binding Information}" Height="22" Width="9" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="3" Foreground="Gainsboro" Background="Transparent" Margin="123,66,252,71" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <Label Content="{Binding Status}" Height="22" Width="103" FontSize="11" FontFamily="Microsoft Sans Serif" TabIndex="2" Foreground="Gainsboro" Background="Transparent" Margin="0,0,12,44" HorizontalAlignment="Right" VerticalAlignment="Bottom" />
+        <Label Height="32" Width="264" FontSize="16" FontFamily="Verdana" TabIndex="0" Background="Transparent" Margin="0,0,12,110" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontWeight="Bold" Foreground="White" >TV Rename</Label>
+        <ProgressBar Value="{Binding Progress}" HorizontalAlignment="Left" Height="23" Margin="272,124,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
+
